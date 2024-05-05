@@ -20,7 +20,7 @@ export default function MyNavbar() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <p className="font-bold text-black">UKSNC Supplements</p>
+                    <p className="font-bold text-black text-2xl">UKSNC Supplements</p>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -33,6 +33,11 @@ export default function MyNavbar() {
                 <NavbarItem >
                     <Link className="text-black" href="#" aria-current="page">
                         Products
+                    </Link>
+                </NavbarItem>
+                <NavbarItem >
+                    <Link className="text-black" href="/Proteins" aria-current="page">
+                        Proteins
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
