@@ -1,11 +1,12 @@
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import MyNavbar from "../components/Navbar";
+import SocialsFooter from "../components/SocialsFooter";
 
 const ProteinProducts = [
     {
         id: "1",
-        name:'THE ONLY WHEY PROTEIN',
+        name: 'THE ONLY WHEY PROTEIN',
         price: 39.99,
         image: "images/ProteinImages/only-whey-final-300x300.png",
         // image2: "./images/only-whey-nutritional-info.jpeg",
@@ -14,9 +15,9 @@ const ProteinProducts = [
     },
     {
         id: "2",
-        name:'THE ONLY WHEY PROTEIN',
+        name: 'THE ONLY WHEY PROTEIN',
         price: 29.99,
-        image: "images/ProteinImages/only-whey-final-300x300.png",
+        image: "images/ProteinImages/only-whey-final-300x300.png", 
         // image2: "./images/only-whey-nutritional-info.jpeg",
         to: "./OnlyWheyPage",
         size: "908g",
@@ -50,7 +51,7 @@ const ProteinProducts = [
     },
     {
         id: "6",
-        name: "AFTER TRAIN FRUIT PUNCH",
+        name: "AFTER TRAIN",
         price: 24.99,
         image: "images/ProteinImages/1After_Train_Fruit_Punch-1-300x300.png",
         to: "./AfterTrainFruitPage",
@@ -60,7 +61,7 @@ const ProteinProducts = [
     },
     {
         id: "7",
-        name: "AFTER TRAIN RASPBERRY",
+        name: "AFTER TRAIN",
         price: 24.99,
         image: "images/ProteinImages/2After_Train_Raspberry-1-300x300.png",
         to: "./AfterTrainBluePage",
@@ -70,7 +71,7 @@ const ProteinProducts = [
     },
     {
         id: "8",
-        name: "AFTER TRAIN APPLE",
+        name: "AFTER TRAIN",
         price: 24.99,
         image: "images/ProteinImages/apple-aftertrain-300x300.png",
         to: "./AfterTrainPage",
@@ -79,7 +80,7 @@ const ProteinProducts = [
     },
     {
         id: "9",
-        name: "AFTER TRAIN ORANGE",
+        name: "AFTER TRAIN",
         price: 24.99,
         image: "images/ProteinImages/3After_Train_Orange-1-300x300.png",
         to: "./AfterTrainOrangePage",
@@ -96,25 +97,26 @@ export default function Proteins() {
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
                     {ProteinProducts.map((ProteinProduct) => (
                         <Card key={ProteinProduct.id} className="py-4">
-                        <CardHeader className="pb-0 pt-2 px-4 flex-col items-center text-center">
-                            <p className="text-lg uppercase font-bold">{ProteinProduct.name}</p>
-                            <small className="text-black">£{ProteinProduct.price.toFixed(2)}</small>
-                            {/* <h4 className="font-bold text-large">Frontend Radio</h4> */}
-                        </CardHeader>
-                        <CardBody className="flex items-center">
-                            <img src={ProteinProduct.image} alt={ProteinProduct.name} className="object-cover" />
-                        </CardBody>
-                        {/* <small className="text-black text-center">{ProteinProduct.size}</small> */}
-                        <div className="text-center">
+                            <CardHeader className="pb-0 pt-2 px-4 flex-col items-center text-center">
+                                <p className="text-lg uppercase font-bold">{ProteinProduct.name}</p>
+                                <small className="text-black">£{ProteinProduct.price.toFixed(2)}</small>
+                                {/* <h4 className="font-bold text-large">Frontend Radio</h4> */}
+                            </CardHeader>
+                            <CardBody className="flex items-center">
+                                <img src={ProteinProduct.image} alt={ProteinProduct.name} className="object-cover" />
+                            </CardBody>
+                            {/* <small className="text-black text-center">{ProteinProduct.size}</small> */}
+                            <div className="text-center">
                                 {ProteinProduct.flavour && (
                                     <small className="text-black block">{ProteinProduct.flavour}</small>
                                 )}
                                 <small className="text-black block">{ProteinProduct.size}</small>
                             </div>
-                    </Card>
+                        </Card>
                     ))}
                 </div>
             </div>
+            <SocialsFooter />
         </div>
     );
 }
