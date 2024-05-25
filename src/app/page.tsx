@@ -15,7 +15,7 @@ export default function Home() {
             <div className="gap-4">
               <img src="/images/homepage-images/snc-products_edited.jpg" className="homepage-image px-2 " />
               <div className="absolute inset-0 flex justify-center items-center">
-                <span className="text-white text-center text-lg rounded-lg backdrop-brightness-50 px-4 py-1">Great tasting protein.</span>
+                <span className="text-white text-center text-lg rounded-lg backdrop-brightness-50 px-4 py-1" style={{ width: '70%'}}>Great tasting protein.</span>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@ export default function Home() {
             <div className="gap-4">
               <img src="/images/homepage-images/CarouselStageB4Pump_edited.jpg" className="homepage-image px-2 " />
               <div className="absolute inset-0 flex justify-center items-center ">
-                <span className="text-white text-center text-lg rounded-lg backdrop-brightness-50 px-4 py-1">Extremely effective pre-workouts.</span>
+                <span className="text-white text-center text-lg rounded-lg backdrop-brightness-50 px-4 py-1" style={{ width: '70%'}}>Extremely effective pre-workouts.</span>
               </div>
             </div>
           </div>
