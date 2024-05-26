@@ -20,7 +20,7 @@ const FatLossProducts = [
         flavour: "",
     },
     {
-        id: 1,
+        id: 3,
         name: "STAGE RIPPED",
         price: 29.99,
         image: "images/fatlossImages/Stage-Ripped-CGI-300x300.png",

@@ -93,7 +93,7 @@ export default function Proteins() {
     return (
         <div>
             <MyNavbar />
-            <img src="images/bannerImages/OnlyWheYBanner.png" alt="banner" className="workout-banner"/>
+            <img src="images/bannerImages/OnlyWheYBanner.png" alt="banner" className="protein-banner"/>
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
                     {ProteinProducts.map((ProteinProduct) => (
