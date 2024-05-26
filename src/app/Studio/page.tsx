@@ -66,7 +66,7 @@ export default function Studio() {
                             <img src="images/studio/studioPic6_edited.jpg" alt="studioImage4" className="rounded-lg" />
                         </CardBody>
                         <CardBody className="text-center">
-                            <p>Contact us today and book your free consultation with Mark Etherden. You won't regret it!</p>
+                            <p>Contact us today and book your free consultation with Mark Etherden. You will not regret it!</p>
                         </CardBody>
                     </Card>
                 </div>
