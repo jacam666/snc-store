@@ -1,5 +1,4 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react"
-import MyNavbar from "../components/Navbar"
 import SocialsFooter from "../components/SocialsFooter"
 
 const FatLossProducts = [
@@ -32,7 +31,6 @@ const FatLossProducts = [
 export default function FatLoss() {
     return (
         <div>
-            <MyNavbar />
             <img src="images/bannerImages/FatBurnerBanner.png" alt="fatLoss banner" />
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">

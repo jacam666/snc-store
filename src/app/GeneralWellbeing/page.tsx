@@ -1,5 +1,4 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react"
-import MyNavbar from "../components/Navbar"
 import SocialsFooter from "../components/SocialsFooter"
 
 const WellbeingProducts = [
@@ -24,7 +23,6 @@ const WellbeingProducts = [
 export default function GeneralWellbeing() {
     return (
         <div>
-            <MyNavbar />
             <img src="images/bannerImages/after_train_banner_test_01_2545px.png-1.png" alt="banner" />
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">

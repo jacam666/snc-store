@@ -1,5 +1,4 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react"
-import MyNavbar from "../components/Navbar"
 import SocialsFooter from "../components/SocialsFooter"
 
 const WorkoutProducts = [ 
@@ -56,7 +55,6 @@ const WorkoutProducts = [
 export default function PreWorkouts() {
     return (
         <div>
-            <MyNavbar/>
                 <img src="images/bannerImages/B4ExtremeBanner.png" alt="banner" className="workout-banner"/>
                 <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">

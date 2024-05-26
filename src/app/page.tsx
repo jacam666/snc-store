@@ -1,14 +1,12 @@
 "use client"
 
 import Footer from "./components/Footer";
-import MyNavbar from "./components/Navbar";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Home() {
   return (
     <div className="bg-white  ">
-      <MyNavbar />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
         <div className="relative  ">
           <div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
-import MyNavbar from "../components/Navbar";
 import SocialsFooter from "../components/SocialsFooter";
 
 const ProteinProducts = [
@@ -92,7 +91,6 @@ const ProteinProducts = [
 export default function Proteins() {
     return (
         <div>
-            <MyNavbar />
             <img src="images/bannerImages/OnlyWheYBanner.png" alt="banner" className="protein-banner"/>
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">

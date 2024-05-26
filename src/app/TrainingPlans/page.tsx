@@ -1,5 +1,4 @@
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react"
-import MyNavbar from "../components/Navbar"
+import { Card, CardBody, CardHeader } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
 
 const TrainingProducts = [
@@ -23,7 +22,6 @@ const TrainingProducts = [
 export default function TrainingPlans() {
     return (
         <div>
-            <MyNavbar />
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
                     {TrainingProducts.map((TrainingProduct) => (

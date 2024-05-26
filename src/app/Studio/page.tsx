@@ -1,11 +1,9 @@
 import { Card, CardBody } from "@nextui-org/react"
-import MyNavbar from "../components/Navbar"
 import SocialsFooter from "../components/SocialsFooter"
 
 export default function Studio() {
     return (
         <div>
-            <MyNavbar />
             <div>
                 <img src="images/studio/studioPic9_edited1.jpg" alt="studio-banner" className="w-full" />
             </div>
