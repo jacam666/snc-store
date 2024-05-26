@@ -13,7 +13,7 @@ export default function Home() {
             <div className="gap-4">
               <img src="/images/homepage-images/snc-products_edited.jpg" className="homepage-image px-2 " />
               <div className="absolute inset-0 flex justify-center items-center">
-                <span className="text-white text-center text-lg rounded-lg backdrop-brightness-50 px-4 py-1" >Great tasting protein.</span>
+                <span className="text-white text-center text-2xl rounded-lg backdrop-brightness-50 px-4 py-1" >Great tasting protein.</span>
               </div>
             </div>
           </div>
@@ -24,7 +24,7 @@ export default function Home() {
             <div className="gap-4">
               <img src="/images/homepage-images/CarouselStageB4Pump_edited.jpg" className="homepage-image px-2 " />
               <div className="absolute inset-0 flex justify-center items-center ">
-                <span className="text-white text-center text-lg rounded-lg backdrop-brightness-50 px-4 py-1" >Extremely effective pre-workouts.</span>
+                <span className="text-white text-center text-2xl rounded-lg backdrop-brightness-50 px-2 py-1" >Extremely effective pre-workouts.</span>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="gap-4">
               <img src="/images/homepage-images/CarouselOnlyWheyPromotion_edited.jpg" className="homepage-image px-2 " />
               <div className="absolute inset-0 flex justify-center items-center ">
-                <span className="text-white text-center text-lg rounded-lg backdrop-brightness-50 px-4 py-1">The Only Whey protein shake.</span>
+                <span className="text-white text-center text-2xl rounded-lg backdrop-brightness-50 px-4 py-1">The Only Whey protein shake.</span>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="gap-4">
               <img src="/images/homepage-images/homepage-snc-display-image2_edited.jpg" className="homepage-image px-2 " />
               <div className="absolute inset-0 flex justify-center items-center ">
-                <span className="text-white text-center text-lg  rounded-lg backdrop-brightness-50 px-4 py-1">Wide range of products.</span>
+                <span className="text-white text-center text-2xl  rounded-lg backdrop-brightness-50 px-4 py-1">Wide range of products.</span>
               </div>
             </div>
           </div>
