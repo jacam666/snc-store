@@ -29,8 +29,8 @@ export default function GeneralWellbeing() {
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
                     {WellbeingProducts.map((WellbeingProduct) => (
-                            <Card>
-                                <CardHeader  className="pb-0 pt-2 flex-col items-center text-center">
+                            <Card key={WellbeingProduct.id} className="py-4">
+                                <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                     <p className="text-2xl uppercase font-bold">{WellbeingProduct.name}</p>
                                 </CardHeader>
                                 <CardBody className="flex items-center">
