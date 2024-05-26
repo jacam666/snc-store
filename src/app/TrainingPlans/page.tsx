@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from "@nextui-org/react"
+import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react"
 import MyNavbar from "../components/Navbar"
 import SocialsFooter from "../components/SocialsFooter"
 
@@ -25,7 +25,7 @@ export default function TrainingPlans() {
         <div>
             <MyNavbar />
             <div>
-                <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 m-3">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
                     {TrainingProducts.map((TrainingProduct) => (
                         <Card key={TrainingProduct.id} className="py-4">
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
@@ -43,6 +43,16 @@ export default function TrainingPlans() {
                             <small className="text-black text-center font-bold mt-3 text-xl">£{TrainingProduct.price.toFixed(2)}</small>
                         </Card>
                     ))}
+                    <Card>
+                        <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
+                            <p className="text-2xl uppercase font-bold">
+                                Certified Nutrition Coach
+                            </p>
+                        </CardHeader>
+                        <CardBody>
+                            <img src="images/trainingImages/nutritionCertificate.jpg" className="object-cover" />
+                        </CardBody>
+                    </Card>
                 </div>
             </div>
             <SocialsFooter />
