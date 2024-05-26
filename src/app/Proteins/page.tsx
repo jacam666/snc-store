@@ -93,25 +93,24 @@ export default function Proteins() {
     return (
         <div>
             <MyNavbar />
+            <img src="images/bannerImages/OnlyWheYBanner.png" alt="banner" className="workout-banner"/>
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
                     {ProteinProducts.map((ProteinProduct) => (
                         <Card key={ProteinProduct.id} className="py-4">
-                            <CardHeader className="pb-0 pt-2 px-4 flex-col items-center text-center">
-                                <p className="text-lg uppercase font-bold">{ProteinProduct.name}</p>
-                                <small className="text-black">£{ProteinProduct.price.toFixed(2)}</small>
-                                {/* <h4 className="font-bold text-large">Frontend Radio</h4> */}
+                            <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
+                                <p className="text-2xl uppercase font-bold">{ProteinProduct.name}</p>
                             </CardHeader>
                             <CardBody className="flex items-center">
                                 <img src={ProteinProduct.image} alt={ProteinProduct.name} className="object-cover" />
                             </CardBody>
-                            {/* <small className="text-black text-center">{ProteinProduct.size}</small> */}
                             <div className="text-center">
                                 {ProteinProduct.flavour && (
-                                    <small className="text-black block">{ProteinProduct.flavour}</small>
+                                    <small className="text-black block text-xl py-2 font-bold">{ProteinProduct.flavour}</small>
                                 )}
-                                <small className="text-black block">{ProteinProduct.size}</small>
+                                <small className="text-black text-lg block">{ProteinProduct.size}</small>
                             </div>
+                            <small className="text-black text-center font-bold mt-3 text-xl">£{ProteinProduct.price.toFixed(2)}</small>
                         </Card>
                     ))}
                 </div>
