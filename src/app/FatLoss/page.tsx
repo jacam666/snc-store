@@ -1,5 +1,6 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
+import AddToCartButton from "../components/AddToCartButton"
 
 const FatLossProducts = [
     {
@@ -49,6 +50,7 @@ export default function FatLoss() {
                                 <small className="text-black text-lg block">{FatLossProduct.size}</small>
                             </div>
                             <small className="text-black text-center font-bold mt-3 text-xl">£{FatLossProduct.price.toFixed(2)}</small>
+                            <AddToCartButton />
                         </Card>
                     ))}
         
