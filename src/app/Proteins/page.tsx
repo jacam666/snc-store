@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import SocialsFooter from "../components/SocialsFooter";
 import AddToCartButton from "../components/AddToCartButton";
+
 
 const ProteinProducts = [
     {
@@ -17,7 +18,7 @@ const ProteinProducts = [
         id: "2",
         name: 'THE ONLY WHEY PROTEIN',
         price: 29.99,
-        image: "images/ProteinImages/only-whey-final-300x300.png", 
+        image: "images/ProteinImages/only-whey-final-300x300.png",
         // image2: "./images/only-whey-nutritional-info.jpeg",
         to: "./OnlyWheyPage",
         size: "908g",
@@ -92,7 +93,7 @@ const ProteinProducts = [
 export default function Proteins() {
     return (
         <div>
-            <img src="images/bannerImages/OnlyWheYBanner.png" alt="banner" className="protein-banner"/>
+            <img src="images/bannerImages/OnlyWheYBanner.png" alt="banner" className="protein-banner" />
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
                     {ProteinProducts.map((ProteinProduct) => (
@@ -100,8 +101,16 @@ export default function Proteins() {
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                 <p className="text-2xl uppercase font-bold">{ProteinProduct.name}</p>
                             </CardHeader>
-                            <CardBody className="flex items-center">
+                            {/* <CardBody className="flex items-center">
                                 <img src={ProteinProduct.image} alt={ProteinProduct.name} className="object-cover" />
+                            </CardBody> */}
+                            <CardBody className="flex items-center">
+                                <Image
+                                    isZoomed
+                                    width={240}
+                                    alt="protein Image with Zoom"
+                                    src={ProteinProduct.image}
+                                />
                             </CardBody>
                             <div className="text-center">
                                 {ProteinProduct.flavour && (

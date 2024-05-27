@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from "@nextui-org/react"
+import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
 import AddToCartButton from "../components/AddToCartButton"
 
@@ -44,7 +44,7 @@ const WorkoutProducts = [
         size:"",
     },
     {
-        id: 5,
+        id: 6,
         name: "STAGE PUMP",
         price: 29.99,
         image: "images/PreWorkoutImages/STAGE-PUMP-BLUE-FOR-WEB-300x300.png",
@@ -64,8 +64,16 @@ export default function PreWorkouts() {
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                 <p className="text-2xl uppercase font-bold">{WorkoutProduct.name}</p>
                             </CardHeader>
-                            <CardBody className="flex items-center">
+                            {/* <CardBody className="flex items-center">
                                 <img src={WorkoutProduct.image} alt={WorkoutProduct.name} className="object-cover" />
+                            </CardBody> */}
+                            <CardBody className="flex items-center">
+                                <Image
+                                    isZoomed
+                                    width={240}
+                                    alt="protein Image with Zoom"
+                                    src={WorkoutProduct.image}
+                                />
                             </CardBody>
                             <div className="text-center">
                                 {WorkoutProduct.flavour && (

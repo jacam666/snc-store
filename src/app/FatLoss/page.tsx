@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from "@nextui-org/react"
+import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
 import AddToCartButton from "../components/AddToCartButton"
 
@@ -40,8 +40,16 @@ export default function FatLoss() {
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                 <h1 className="text-2xl font-bold">{FatLossProduct.name}</h1>
                             </CardHeader>
-                            <CardBody className="flex flex-col justify-between items-center">
+                            {/* <CardBody className="flex flex-col justify-between items-center">
                                 <img src={FatLossProduct.image} alt={FatLossProduct.name} className="w-1/2" />
+                            </CardBody> */}
+                            <CardBody className="flex items-center">
+                                <Image
+                                    isZoomed
+                                    width={240}
+                                    alt="protein Image with Zoom"
+                                    src={FatLossProduct.image}
+                                />
                             </CardBody>
                             <div className="text-center">
                                 {FatLossProduct.flavour && (

@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader } from "@nextui-org/react"
+import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
 import AddToCartButton from "../components/AddToCartButton"
 
@@ -18,6 +18,13 @@ const TrainingProducts = [
         flavour: "",
         size: "",
     },
+    // {
+    //     id: 3,
+    //     name: "Certified Nutrition Coach",
+    //     image: "images/trainingImages/nutritionCertificate.jpg",
+    //     flavour: "",
+    //     size: "",
+    // },
 ]
 
 export default function TrainingPlans() {
@@ -30,8 +37,16 @@ export default function TrainingPlans() {
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                 <p className="text-2xl uppercase font-bold">{TrainingProduct.name}</p>
                             </CardHeader>
-                            <CardBody className="flex items-center">
+                            {/* <CardBody className="flex items-center">
                                 <img src={TrainingProduct.image} alt={TrainingProduct.name} className="object-cover" />
+                            </CardBody> */}
+                            <CardBody className="flex items-center">
+                                <Image
+                                    isZoomed
+                                    width={400}
+                                    alt="protein Image with Zoom"
+                                    src={TrainingProduct.image}
+                                />
                             </CardBody>
                             <div className="text-center">
                                 {TrainingProduct.flavour && (
@@ -39,11 +54,13 @@ export default function TrainingPlans() {
                                 )}
                                 <small className="text-black text-lg block">{TrainingProduct.size}</small>
                             </div>
-                            <small className="text-black text-center font-bold mt-3 text-xl">£{TrainingProduct.price.toFixed(2)}</small>
+                            {TrainingProduct.price !== undefined && (
+                                <small className="text-black text-center font-bold mt-3 text-xl">£{TrainingProduct.price.toFixed(2)}</small>
+                            )}
                             <AddToCartButton />
                         </Card>
                     ))}
-                    <Card>
+                    {/* <Card>
                         <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                             <p className="text-2xl uppercase font-bold">
                                 Certified Nutrition Coach
@@ -52,6 +69,21 @@ export default function TrainingPlans() {
                         <CardBody>
                             <img src="images/trainingImages/nutritionCertificate.jpg" className="object-cover" />
                         </CardBody>
+                    </Card> */}
+                    <Card>
+                    <CardBody>
+                        <CardHeader  className="pb-0 pt-2 flex-col items-center text-center">
+                        <p className="text-2xl uppercase font-bold">Certified Nutrition Coach</p>
+                        </CardHeader>
+                        <CardBody className="flex items-center">
+                                <Image
+                                    isZoomed
+                                    width={400}
+                                    alt="protein Image with Zoom"
+                                    src="images/trainingImages/nutritionCertificate.jpg"
+                                />
+                            </CardBody>
+                    </CardBody>
                     </Card>
                 </div>
             </div>
