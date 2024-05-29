@@ -42,8 +42,8 @@ const Cart: React.FC = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            {cartItems.map((item) => (
-                                                <MDBCard key={item.id} className="mb-3">
+                                            {cartItems.map((item, index) => (
+                                                <MDBCard key={index} className="mb-3">
                                                     <MDBCardBody className="flex justify-between">
                                                         <div className="flex">
                                                             <MDBCardImage
