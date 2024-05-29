@@ -4,8 +4,8 @@ import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBContainer, MDBIcon, MDBRow, MDBTypography } from "mdb-react-ui-kit";
-import { Minus, Plus, Trash, Trash2Icon } from "lucide-react";
-import {removeFromCart}  from "../features/cart/cartSlice";
+import { Minus, Plus, Trash2Icon } from "lucide-react";
+import {decrementQuantity, incrementQuantity, removeFromCart}  from "../features/cart/cartSlice";
 
 const Cart: React.FC = () => {
     const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -14,13 +14,22 @@ const Cart: React.FC = () => {
     const handleRemove = (itemId: number) => {
         dispatch(removeFromCart(itemId));
     };
+    const handleDecrement = (itemId: number) => {
+        dispatch(decrementQuantity(itemId));
+    };
 
-    const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
+    const handleIncrement = (itemId: number) => {
+        dispatch(incrementQuantity(itemId));
+    };
+
+    // const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
+    const cartTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
 
     return (
         <section style={{ backgroundColor: "#eee" }}>
             <MDBContainer className="py-5 h-auto">
-                <MDBRow className="flex justify-center h-auto">
+                <MDBRow className="flex justify-center h-auto w-auto">
                     <MDBCol>
                         <MDBCard>
                             <MDBCardBody className="p-4">
@@ -32,7 +41,6 @@ const Cart: React.FC = () => {
                                                 <p className="mb-0">You have {cartItems.length} items in your cart</p>
                                             </div>
                                         </div>
-                                        <MDBCard>
                                             {cartItems.map((item) => (
                                                 <MDBCard key={item.id} className="mb-3">
                                                     <MDBCardBody className="flex justify-between">
@@ -51,10 +59,19 @@ const Cart: React.FC = () => {
                                                                 <p className="small mb-0">{item.size}</p>
                                                             </div>
                                                         </div>
-                                                        <div className="flex ml-5">
-                                                            <div style={{ width: "80px" }}>
+                                                        <div className="flex ml-2">
+                                                            <div>
+                                                                <button className="btn btn-primary btn-sm me-2" onClick={() => handleDecrement(item.id)}>
+                                                                    <Minus size={16} />
+                                                                </button>
+                                                                <span>{item.quantity}</span>
+                                                                <button className="btn btn-primary btn-sm ms-2" onClick={() => handleIncrement(item.id)}>
+                                                                    <Plus size={16} />
+                                                                </button>
+                                                            </div>
+                                                            <div style={{ width: "80px" }} className="ml-2">
                                                                 <MDBTypography tag="h5" className="mb-0">
-                                                                    £{item.price}
+                                                                    £{item.price*item.quantity}
                                                                 </MDBTypography>
                                                             </div>
                                                             <a href="#!" onClick={() => handleRemove(item.id)}>
@@ -64,12 +81,11 @@ const Cart: React.FC = () => {
                                                     </MDBCardBody>
                                                 </MDBCard>
                                             ))}
-                                        </MDBCard>
                                         <MDBCard className="text-center text-3xl mt-4">
                                             <p>Total = £{cartTotal.toFixed(2)}</p>
                                         </MDBCard>
                                     </MDBCol>
-                                    <MDBBtn className="bg-green-50 border border-black rounded-2xl px-3 py-2 mx-auto mt-4">
+                                    <MDBBtn className="flex bg-green-50 border border-black rounded-2xl px-3 py-2 mx-auto mt-4">
                                         Go to Checkout
                                     </MDBBtn>
                                 </MDBRow>
