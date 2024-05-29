@@ -1,12 +1,13 @@
+import React from "react"
+import Cart from "../components/Cart"
 import SocialsFooter from "../components/SocialsFooter"
 
-export default function Basket() {
+const Basket: React.FC = () => {
     return (
         <div>
-            <p>
-
-            </p>
-            <SocialsFooter/>
+            <Cart />
+            <SocialsFooter />
         </div>
     )
 }
+export default Basket;
