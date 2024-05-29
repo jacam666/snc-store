@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBContainer, MDBIcon, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 import { Minus, Plus, Trash2Icon } from "lucide-react";
-import {decrementQuantity, incrementQuantity, removeFromCart}  from "../features/cart/cartSlice";
+import { decrementQuantity, incrementQuantity, removeFromCart } from "../features/cart/cartSlice";
 
 const Cart: React.FC = () => {
     const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -41,6 +41,7 @@ const Cart: React.FC = () => {
                                                 <p className="mb-0">You have {cartItems.length} items in your cart</p>
                                             </div>
                                         </div>
+                                        <div>
                                             {cartItems.map((item) => (
                                                 <MDBCard key={item.id} className="mb-3">
                                                     <MDBCardBody className="flex justify-between">
@@ -71,7 +72,7 @@ const Cart: React.FC = () => {
                                                             </div>
                                                             <div style={{ width: "80px" }} className="ml-2">
                                                                 <MDBTypography tag="h5" className="mb-0">
-                                                                    £{item.price*item.quantity}
+                                                                    £{item.price * item.quantity}
                                                                 </MDBTypography>
                                                             </div>
                                                             <a href="#!" onClick={() => handleRemove(item.id)}>
@@ -81,6 +82,7 @@ const Cart: React.FC = () => {
                                                     </MDBCardBody>
                                                 </MDBCard>
                                             ))}
+                                        </div>
                                         <MDBCard className="text-center text-3xl mt-4">
                                             <p>Total = £{cartTotal.toFixed(2)}</p>
                                         </MDBCard>
