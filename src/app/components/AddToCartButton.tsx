@@ -22,9 +22,16 @@ interface AddToCartButtonProps {
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
     const dispatch = useDispatch<AppDispatch>();
 
+    // const handleAddToCart = () => {
+    //     dispatch(addToCart({ product}));
+    // };
     const handleAddToCart = () => {
-        dispatch(addToCart(product));
+        const { id, name, price, image, size, flavour } = product;
+        const quantity = 1; // You can set a default quantity here or fetch it from somewhere else
+        dispatch(addToCart({ id, name, price, image, size, flavour, quantity }));
     };
+    
+    
 
     return (
         <div className="flex justify-center w-full my-4">
