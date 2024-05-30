@@ -36,23 +36,23 @@ const TrainingPlans: React.FC = () => {
         <div>
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
-                    {TrainingProducts.map((TrainingProduct) => (
-                        <Card key={TrainingProduct.id} className="py-4">
+                    {TrainingProducts.map((product) => (
+                        <Card key={product.id} className="py-4">
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
-                                <p className="text-2xl uppercase font-bold">{TrainingProduct.name}</p>
+                                <p className="text-2xl uppercase font-bold">{product.name}</p>
                             </CardHeader>
                             <CardBody className="flex items-center">
                                 <Image
                                     isZoomed
                                     width={400}
                                     alt="protein Image with Zoom"
-                                    src={TrainingProduct.image}
+                                    src={product.image}
                                 />
                             </CardBody>
-                            {TrainingProduct.price !== undefined && (
-                                <small className="text-black text-center font-bold mt-3 text-xl">£{TrainingProduct.price.toFixed(2)}</small>
+                            {product.price !== undefined && (
+                                <small className="text-black text-center font-bold mt-3 text-xl">£{product.price.toFixed(2)}</small>
                             )}
-                            <AddToCartButton product={TrainingProduct} />
+                            <AddToCartButton product={product} />
                         </Card>
                     ))}
                     <Card key="certified-nutrition-coach">
