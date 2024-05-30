@@ -49,7 +49,7 @@ const FatLoss: React.FC = () => {
             <img src="images/bannerImages/FatBurnerBanner.png" alt="fatLoss banner" />
             <div>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-3">
-                    {FatLossProducts.map((Product, index) => (
+                    {FatLossProducts.map((Product) => (
                         <Card key={Product.id} className="bg-white py-4">
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                 <h1 className="text-2xl font-bold">{Product.name}</h1>
