@@ -1,33 +1,37 @@
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
 import AddToCartButton from "../components/AddToCartButton"
+import React from "react";
 
-const TrainingProducts = [
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    size: string;
+    flavour: string;
+}
+
+const TrainingProducts: Product[] = [
     {
         id: 1,
         name: "Training Plan",
         price: 30,
         image: "images/trainingImages/620-620-traininngplan-1-300x300.jpg",
         size: "",
+        flavour: "",
     },
     {
         id: 2,
         name: "Diet Plan",
         price: 30,
         image: "images/trainingImages/personal-training-image-1_edited.jpg",
-        flavour: "",
         size: "",
+        flavour: "",
     },
-    // {
-    //     id: 3,
-    //     name: "Certified Nutrition Coach",
-    //     image: "images/trainingImages/nutritionCertificate.jpg",
-    //     flavour: "",
-    //     size: "",
-    // },
 ]
 
-export default function TrainingPlans() {
+const TrainingPlans: React.FC = () => {
     return (
         <div>
             <div>
@@ -37,9 +41,6 @@ export default function TrainingPlans() {
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                 <p className="text-2xl uppercase font-bold">{TrainingProduct.name}</p>
                             </CardHeader>
-                            {/* <CardBody className="flex items-center">
-                                <img src={TrainingProduct.image} alt={TrainingProduct.name} className="object-cover" />
-                            </CardBody> */}
                             <CardBody className="flex items-center">
                                 <Image
                                     isZoomed
@@ -48,42 +49,26 @@ export default function TrainingPlans() {
                                     src={TrainingProduct.image}
                                 />
                             </CardBody>
-                            <div className="text-center">
-                                {TrainingProduct.flavour && (
-                                    <small className="text-black block text-xl py-2 font-bold">{TrainingProduct.flavour}</small>
-                                )}
-                                <small className="text-black text-lg block">{TrainingProduct.size}</small>
-                            </div>
                             {TrainingProduct.price !== undefined && (
                                 <small className="text-black text-center font-bold mt-3 text-xl">£{TrainingProduct.price.toFixed(2)}</small>
                             )}
-                            <AddToCartButton />
+                            <AddToCartButton product={TrainingProduct} />
                         </Card>
                     ))}
-                    {/* <Card>
-                        <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
-                            <p className="text-2xl uppercase font-bold">
-                                Certified Nutrition Coach
-                            </p>
-                        </CardHeader>
+                    <Card key="certified-nutrition-coach">
                         <CardBody>
-                            <img src="images/trainingImages/nutritionCertificate.jpg" className="object-cover" />
-                        </CardBody>
-                    </Card> */}
-                    <Card>
-                    <CardBody>
-                        <CardHeader  className="pb-0 pt-2 flex-col items-center text-center">
-                        <p className="text-2xl uppercase font-bold">Certified Nutrition Coach</p>
-                        </CardHeader>
-                        <CardBody className="flex items-center">
+                            <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
+                                <p className="text-2xl uppercase font-bold">Certified Nutrition Coach</p>
+                            </CardHeader>
+                            <CardBody className="flex items-center">
                                 <Image
                                     isZoomed
                                     width={400}
                                     alt="protein Image with Zoom"
-                                    src="images/trainingImages/nutritionCertificate.jpg"
+                                    src="images/trainingImages/nutritionCertificate.jpg" 
                                 />
                             </CardBody>
-                    </CardBody>
+                        </CardBody>
                     </Card>
                 </div>
             </div>
@@ -91,3 +76,5 @@ export default function TrainingPlans() {
         </div>
     )
 }
+
+export default TrainingPlans;

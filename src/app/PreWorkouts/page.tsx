@@ -1,8 +1,18 @@
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
 import AddToCartButton from "../components/AddToCartButton"
+import React from "react";
 
-const WorkoutProducts = [ 
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    size: string;
+    flavour: string;
+}
+
+const WorkoutProducts: Product [] = [ 
     {
         id: 1,
         name: "B4 EXTREME",
@@ -53,7 +63,7 @@ const WorkoutProducts = [
     },
 ]
 
-export default function PreWorkouts() {
+const PreWorkouts: React.FC = () => {
     return (
         <div>
                 <img src="images/bannerImages/B4ExtremeBanner.png" alt="banner" className="workout-banner"/>
@@ -82,7 +92,7 @@ export default function PreWorkouts() {
                                 <small className="text-black block">{WorkoutProduct.size}</small>
                             </div>
                             <small className="text-black text-center mt-3 text-xl">£{WorkoutProduct.price.toFixed(2)}</small>
-                            <AddToCartButton />
+                            <AddToCartButton product={WorkoutProduct}/>
                         </Card>
                     ))}
                 </div>
@@ -91,3 +101,5 @@ export default function PreWorkouts() {
         </div>
     )
 }
+
+export default PreWorkouts;

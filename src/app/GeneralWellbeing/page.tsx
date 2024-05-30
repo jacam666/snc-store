@@ -1,8 +1,18 @@
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import SocialsFooter from "../components/SocialsFooter"
 import AddToCartButton from "../components/AddToCartButton"
+import React from "react";
 
-const WellbeingProducts = [
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    size: string;
+    flavour: string;
+}
+
+const WellbeingProducts: Product[] = [
     {
         id: 1,
         name: "CONTEST P.C.T",
@@ -21,7 +31,7 @@ const WellbeingProducts = [
     },
 ]
 
-export default function GeneralWellbeing() {
+const GeneralWellbeing: React.FC = () => {
     return (
         <div>
             <img src="images/bannerImages/after_train_banner_test_01_2545px.png-1.png" alt="banner" />
@@ -32,9 +42,6 @@ export default function GeneralWellbeing() {
                             <CardHeader className="pb-0 pt-2 flex-col items-center text-center">
                                 <p className="text-2xl uppercase font-bold">{WellbeingProduct.name}</p>
                             </CardHeader>
-                            {/* <CardBody className="flex items-center">
-                                    <img src={WellbeingProduct.image} alt={WellbeingProduct.name} className="w-1/2" />
-                                </CardBody> */}
                             <CardBody className="flex items-center">
                                 <Image
                                     isZoomed
@@ -50,7 +57,8 @@ export default function GeneralWellbeing() {
                                 <small className="text-black text-lg block">{WellbeingProduct.size}</small>
                             </div>
                             <small className="text-black text-center font-bold mt-3 text-xl">£{WellbeingProduct.price.toFixed(2)}</small>
-                            <AddToCartButton />
+                            
+                            <AddToCartButton product={WellbeingProduct} />
                         </Card>
                     ))}
                     <Card>
@@ -64,3 +72,4 @@ export default function GeneralWellbeing() {
         </div>
     )
 }
+export default GeneralWellbeing;
